@@ -1,0 +1,15 @@
+
+.icon-isht-direct , .icon-isht-home {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border: 1px solid green;
+}
+
+.icon-isht-home:before {
+    content: url('../images/Home_icon.svg');  
+}
+
+.icon-isht-direct:before {
+    content: url('../images/Direct_icon.svg');
+}

@@ -1,0 +1,128 @@
+.isht-post-item-cont {
+    border: 1px solid #d9d9d9;
+    .isht-post-header {
+        height: 50px;
+        padding: 10px;
+        background-color: #fff;
+        .isht-post-header-usr {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            span {
+                margin: 0px 5px;
+                .isht-post-pp-img {
+                    height:26px;
+                    width:26px;
+                    border-radius : 50%;
+                }
+            }
+        }
+        .isht-post-header-menu {
+            float: right;
+        }
+    }
+    .isht-post-img {
+        width: 100%;
+    }
+    .isht-post-footer {
+        height: auto;
+        background-color: #fff;
+        // border: 1px solid orange;
+        .isht-post-activity-icons-wrap {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            // border:1px solid #d9d9d9;
+            padding-top: 10px;
+            .isht-post-activity-icons-cont {
+                display: flex;
+                width: max-content;
+                span {
+                    margin: 0px 10px;
+                    cursor: pointer;
+                }
+            }
+            .isht-post-save-icon-cont {
+                width: 40px;
+                padding-right: 10px;
+                cursor: pointer;
+            }
+        }
+        .isht-post-likes-count-cont {
+            // border: 1px solid #d9d9d9;
+            height: 20px;
+            padding-top: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .isht-post-caption {
+            height: 30px;
+            font-size: 14px;
+            padding: 7px 10px 0px 10px;
+            .isht-post-footer-usr {
+                font-weight: 500;
+                cursor: pointer;
+            }
+            .isht-post-footer-cap-text {
+                padding-left: 5px;
+            }
+        }
+        .isht-post-comments-count-cont {
+            height: 20px;
+            padding-top: 1px;
+            color: #8e8e8e;
+            font-size: 14px;
+            padding-left: 10px;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
+        }
+        .isht-post-timestamp {
+            // border: 1px solid orange;
+            height: 30px;
+            padding-top: 7px;
+            font-size: 11px;
+            color: #8e8e8e;
+            padding-left: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
+        }
+        .isht-post-text-box {
+            height: 50px;
+            border-top: 1px solid #d9d9d9;
+            padding: 10px;
+            display: flex;
+            .isht-post-cmnt-textarea {
+                width: 95%;
+                border: none;
+                // height: 18px;
+                max-height: 80px;
+                outline: none;
+                resize: none;
+                font-size: 13px;
+            }
+            .isht-post-commnet-btn {
+                outline: none;
+                border: none;
+                background-color: #fff;
+                font-size: 14px;
+                font-weight: 500;
+                color: #3370e2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width : 480px) {
+    .isht-post-item-cont {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width : 481px) {
+    .isht-post-item-cont {
+        margin-bottom: 60px;
+    }
+}

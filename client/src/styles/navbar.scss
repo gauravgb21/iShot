@@ -1,0 +1,98 @@
+$theme-gray-col : #f2f2f2;
+$theme-white-col : #ffffff;
+
+
+
+@font-face {
+    font-family: 'Billabong';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Billabong'), url('./fonts/Billabong.woff') format('woff');
+}
+
+.isht-nav-wrap {
+    background-color: $theme-white-col;
+    border-bottom: 1px solid #d9d9d9;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    .isht-navbar-cont {
+        padding: 9px 10px 10px 10px;
+        max-width: 960px;
+        margin: auto;
+        // border: 1px solid orange;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        .isht-app-icon {
+            font-size: 32px;
+            font-family: 'Billabong';
+            position: relative;
+            top: -5px;
+        }
+
+        .isht-nav-icons {
+            span , label {
+                // border: 1px solid orange;
+                cursor: pointer;
+                margin: 0px 10px;
+                .isht-pp-img {
+                    height: 26px;
+                    width: 26px;
+                    border-radius: 50%;
+                }
+
+                input[type="file"] {
+                    display: none;
+                }
+            }
+            @media screen and (min-width : 481px) {
+                .isht-add-post-icon {
+                    display: none;
+                }
+                .isht-search-icon {
+                    display: none;
+                }
+            }
+            @media screen and (max-width : 480px) {
+                .isht-direct-icon-m {
+                    display: none;
+                }
+            }
+        }
+
+        @media screen and (min-width : 481px) {
+            .isht-direct-icon-ls {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width : 481px){
+            .isht-nav-icons {
+                float: right;
+                // border: 1px solid green;
+                height: 30px;
+                padding: 2px 0px;
+            }
+        }
+
+        @media screen and (max-width : 480px) {
+            .isht-nav-icons {
+                position: fixed;
+                width: 100%;
+                background-color: #fff;
+                z-index: 3;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                display: flex;
+                justify-content: space-around;
+                // border: 1px solid green;
+                height: 45px;
+                align-items: center;
+                padding: 2px 0px;
+            }   
+        }
+    }
+}

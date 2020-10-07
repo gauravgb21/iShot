@@ -1,0 +1,28 @@
+{
+  "name": "ishot",
+  "version": "1.0.0",
+  "description": "An Instagram Clone",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run client\" \"npm run server\"",
+    "server" : "nodemon server.js",
+    "client" : "npm run start --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gaurav Bisht",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}

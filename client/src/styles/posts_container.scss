@@ -1,0 +1,20 @@
+.isht-post-wrap {
+    width: 100%;
+    max-width: 630px;
+    // border: 1px solid red;
+    height: auto;
+}
+
+@media screen and (max-width : 480px) {
+    .isht-post-wrap {
+        padding-top: 53px;
+        margin-bottom: 34px;
+    }   
+}
+
+
+@media screen and (min-width : 481px) {    
+    .isht-post-wrap {
+        padding-top: 80px;
+    }
+}
