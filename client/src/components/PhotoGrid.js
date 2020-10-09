@@ -1,29 +1,40 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import '../styles/photogrid.scss';
 
 const PhotoGrid = props => {
-    const imgUrls = [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-uwhni8yV68oIavpxp2ic2kQlrp_XAxQqCg&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7ucjh1RQi8t42xEGHCoaofVz6OAW65Iw3yQ&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRwmpeECzCHq3aScWmQZXP2KIlxlOJkN64wHQ&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDuCTS-m-UEKs_tj5O6HUo4YE08_5QXLJzXw&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRD2gtQz_Y0En3nPxn4BmGWSKWoSHwkP3og2g&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFYl5hcG2rD2luXM8WVV4EUPwDkHZtt6REmw&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKh6B2Pu-p7JPHcQgIfpC75uVZFG5FAL3a5w&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHJnB3K6NmaM0JeoE9Rp6gHb43-Xt1oLikbA&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnDtXIcuYrlo5XkuVOzzBKwO9wWstzzgH3Og&usqp=CAU'
-    ];
-    const photGridElements = imgUrls.map((dataUrl,ind) => {
-        return(
-            <span className={'isht-photogrid-element'}>
-                <img alt='photo grid image' src={dataUrl} width='100%' />
-            </span>
+    let photoCellList = [];
+    let postDataList = [];
+    props.postsData.forEach((data,ind) => {
+        const photoCellElement = (
+            <div className={'isht-photo-cell'}>
+                <img alt='photo post' src={data.IMG_URL} />
+            </div>
         );
+        photoCellList.push(photoCellElement);
+        if( ind % 3 === 2 || ind === props.postsData.length -1 ){
+            postDataList.push(
+                <div className={'isht-photo-grid-row'}>
+                    {photoCellList}
+                </div>
+            );
+            photoCellList = [];
+        }
+        console.log("photocelllist is => ",photoCellList);
     });
+    console.log("postDataList ======> ",postDataList);
     return(
-        <div className={'isht-photogrid-cont'}>
-            {photGridElements}
+        <div className={'isht-photogrid-container'}>
+            {postDataList}
         </div>
     );
 }
 
-export default PhotoGrid;
+const mapStateToProps = state => {
+    return {
+        postsData : state.postReducer.postsData
+    };
+}
+
+export default connect(mapStateToProps)(PhotoGrid);

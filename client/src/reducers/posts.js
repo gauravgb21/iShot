@@ -1,9 +1,12 @@
-import { CREATE_POST , DELETE_POST , FETCH_POSTS , SET_IMAGE_URL , OPEN_CREATE_POST_MODAL , CLOSE_CREATE_POST_MODAL } from '../actions/types';
+import { CREATE_POST , DELETE_POST , FETCH_POSTS , SET_IMAGE_URL , OPEN_CREATE_POST_MODAL , CLOSE_CREATE_POST_MODAL , LIKE_POST , UNLIKE_POST , POST_COMMENT , OPEN_COMMENTS_LIST , CLOSE_COMMENTS_LIST , FETCH_COMMENTS } from '../actions/types';
 
 const INITIAL_STATE = {
     postsData : [],
+    likedByMe : [],
     postImageUrl : '',
-    showCreatePostModal : false
+    showCreatePostModal : false,
+    showCommentListModal : false,
+    commentsData : []
 }
 
 export const postReducer = ( state = INITIAL_STATE , action ) => {
@@ -44,6 +47,48 @@ export const postReducer = ( state = INITIAL_STATE , action ) => {
         }
 
         case CLOSE_CREATE_POST_MODAL : {
+            return {
+                ...state,
+                ...action.payload
+            };
+        }
+
+        case LIKE_POST : {
+            return {
+                ...state,
+                ...action.payload
+            };
+        }
+
+        case UNLIKE_POST : {
+            return {
+                ...state,
+                ...action.payload
+            };
+        }
+
+        case POST_COMMENT : {
+            return {
+                ...state,
+                ...action.payload
+            };
+        }
+
+        case OPEN_COMMENTS_LIST : {
+            return {
+                ...state,
+                ...action.payload
+            };
+        }
+
+        case CLOSE_COMMENTS_LIST : {
+            return {
+                ...state,
+                ...action.payload
+            };
+        }
+
+        case FETCH_COMMENTS : {
             return {
                 ...state,
                 ...action.payload

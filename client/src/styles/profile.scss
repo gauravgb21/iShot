@@ -1,0 +1,105 @@
+.isht-profile-wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    padding: 70px 0px 0px 0px;
+    .isht-profile-user-details {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        // border: 1px solid #ebebeb;
+        display: flex;
+        padding: 0px 20px;
+        .isht-profile-pic-cont {
+            width: 20%;
+            flex-basis: 0;
+            flex-grow: 1;
+            margin-right: 20px;
+            img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+            }
+            @media screen and (max-width : 736px) {
+                img {
+                    width: 77px;
+                    height: 77px;
+                }
+            }
+        }
+        .isht-user-info-cont {
+            // border: 1px solid #d9d9d9;
+            flex-grow: 2;
+            .isht-user-info-username {
+                height: 40px;
+                display: flex;
+                .isht-username {
+                    font-size: 28px;
+                    font-weight: 300;
+                    color: #262626;
+                }
+                .isht-edit-prof-btn {
+                    border: 1px solid #d9d9d9;
+                    font-size: 14px;
+                    height: 28px;
+                    width: 100px;
+                    text-align: center;
+                    padding: 2px 0px;
+                    position: relative;
+                    top: 7px;
+                    border-radius: 3px;
+                    font-weight: 500;
+                    color: #333;
+                    margin-left: 15px;
+                }
+            }
+            @media screen and (min-width:737px) {
+                .isht-activity-details {
+                    margin-top: 20px;
+                    .isht-activity-value {
+                        margin-right: 40px;
+                        .isht-num {
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width:736px) {
+                .isht-activity-details {
+                    display: flex;
+                    margin-top: 10px;
+                    .isht-activity-value {
+                        display: flex;
+                        flex-direction: column;
+                        width: 88px;
+                        font-size: 14px;
+                        text-align: center;
+                        .isht-num {
+                            font-weight: 500;
+                        }
+                    }
+                }   
+            } 
+            .isht-basic-user-info-cont {
+                margin-top: 20px;
+                .isht-user-info-name {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color:#262626
+                }
+            }
+        }
+        @media screen and (max-width : 736px) {
+            .isht-basic-user-info-cont {    
+                position: absolute;
+                top: 80px;
+                left: 20px;
+            }
+        }
+    }
+
+    .isht-profile-posts-cont {
+        border-top: 1px solid #e5e5e5;
+    }
+}

@@ -10,6 +10,8 @@ import Profile from './components/Profile';
 import DirectMessage from './components/DirectMessage';
 import LandingPage from './components/LandingPage';
 import PrivateRoute from './components/PrivateRoute';
+import CreatePostModal from './components/modals/CreatePostModal';
+
 
 import { setIsAuthenticated , loadUserData } from './actions/auth';
 import { setImageURL , openCreatePostModal } from './actions/posts';
@@ -58,9 +60,11 @@ const App = props => {
     }
 
     const navBarElement = props.isAuthenticated ? <Navbar onImageUpload={(file) => uploadToCloud(file)}/> : '';
+    const createPostModalElement = props.showCreatePostModal ? <CreatePostModal /> : '';
     return(
         <>
         {navBarElement}
+        {createPostModalElement}
         <main className={'isht-main-cont'}>
             <Switch>
                 <PrivateRoute path={'/profile'} component={Profile}/>
@@ -76,7 +80,8 @@ const App = props => {
 
 const mapStateToProps = state => {
     return {
-        isAuthenticated : state.authReducer.isAuthenticated
+        isAuthenticated : state.authReducer.isAuthenticated,
+        showCreatePostModal : state.postReducer.showCreatePostModal
     };
 }
     

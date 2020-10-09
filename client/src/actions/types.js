@@ -16,7 +16,13 @@ export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const LOAD_USER_DATA = 'LOAD_USER_DATA';
 export const SET_ISAUTHENTICATED = 'SET_ISAUTHENTICATED';
 export const LOG_OUT = 'LOG_OUT';
-export const AUTH_ERROR = 'AUTH_ERROR';            
+export const AUTH_ERROR = 'AUTH_ERROR';    
 
+export const LIKE_POST = 'LIKE_POST';
+export const UNLIKE_POST = 'UNLIKE_POST';
+export const POST_COMMENT = 'POST_COMMENT';
+export const OPEN_COMMENTS_LIST = 'OPEN_COMMENTS_LIST';
+export const CLOSE_COMMENTS_LIST = 'CLOSE_COMMENTS_LIST';
 
+export const FETCH_COMMENTS = 'FETCH_COMMENTS';
 

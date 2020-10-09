@@ -17,6 +17,7 @@ $theme-white-col : #ffffff;
     position: fixed;
     top: 0px;
     width: 100%;
+    z-index: 1;
     .isht-navbar-cont {
         padding: 9px 10px 10px 10px;
         max-width: 960px;

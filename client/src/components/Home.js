@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import PostsContainer from './PostsContainer';
 import StaticSideBox from './StaticSideBox';
-import CreatePostModal from './modals/CreatePostModal';
 
 import '../styles/home.scss';
 
@@ -20,21 +19,18 @@ const Home = props => {
     
     useLayoutEffect(() => {
         if(homeSectionRef.current)setSectionWidth(homeSectionRef.current.clientWidth);
-        window.addEventListener('resize',() => {
-            // console.log("yo chngin ",window.innerWidth);
+        const eventCallBack = () => {
             setWindowWidth(window.innerWidth);
             setSectionWidth(homeSectionRef.current.clientWidth);
-        });
-
-        return () => window.removeEventListener('resize',() => setSectionWidth(homeSectionRef.current.clientWidth));
+        }
+        window.addEventListener('resize',eventCallBack);
+        return () => window.removeEventListener('resize',eventCallBack);
     },[homeSectionRef]);
 
     console.log("show modal is => ",props.showCreatePostModal);
-    const createPostModalElement = props.showCreatePostModal ? <CreatePostModal /> : '';
-
+    
     return(
         <React.Fragment>
-            {createPostModalElement}
             <section className={'isht-home-wrap'} ref={homeSectionRef}>
                 <PostsContainer />
                 {
@@ -49,8 +45,7 @@ const Home = props => {
 
 const mapStateToProps = state => {
     return {
-        ...state,
-        showCreatePostModal : state.postReducer.showCreatePostModal
+        ...state
     };
 };
 
