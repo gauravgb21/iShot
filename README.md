@@ -47,5 +47,7 @@ Tools/Technologies: HTML , CSS , Javascript , React js , Redux , Mysql , Node js
 
 ![alt text](https://github.com/gauravgb21/iShot/blob/master/screenshots/ishot-create-post-2.png)
 
+![alt text](https://github.com/gauravgb21/iShot/blob/master/screenshots/ishot-new-post.png)
+
 # New features to be added
 Chat ability , Following , followers , saving posts , notifications
